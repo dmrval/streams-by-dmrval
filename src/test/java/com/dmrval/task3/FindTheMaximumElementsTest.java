@@ -1,4 +1,4 @@
-package ru.neoflex.task3;
+package com.dmrval.task3;
 
 import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.containsInAnyOrder;

@@ -1,4 +1,4 @@
-package ru.neoflex.task3;
+package com.dmrval.task3;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

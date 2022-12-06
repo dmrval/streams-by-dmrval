@@ -1,4 +1,4 @@
-package ru.neoflex.task1;
+package com.dmrval.task1;
 
 import java.util.ArrayList;
 import java.util.List;

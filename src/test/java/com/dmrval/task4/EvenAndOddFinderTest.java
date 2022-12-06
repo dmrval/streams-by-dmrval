@@ -1,8 +1,6 @@
-package ru.neoflex.task4;
+package com.dmrval.task4;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
-import static ru.neoflex.task4.CharacterType.EVEN;
-import static ru.neoflex.task4.CharacterType.ODD;
 
 import junit.framework.TestCase;
 import org.junit.Assert;
@@ -31,18 +29,18 @@ public class EvenAndOddFinderTest extends TestCase {
 
         Map<CharacterType, Set<String>> fromCollection = finder.findFromCollection(sets);
 
-        Assert.assertEquals(5, fromCollection.get(EVEN).size());
-        Assert.assertEquals(3, fromCollection.get(ODD).size());
+        Assert.assertEquals(5, fromCollection.get(CharacterType.EVEN).size());
+        Assert.assertEquals(3, fromCollection.get(CharacterType.ODD).size());
 
         Set<String> forCheckEven = Stream.of("additional", "convenient", "know", "Java", "approach")
                                          .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(EVEN).toArray()));
+        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(CharacterType.EVEN).toArray()));
 
         Set<String> forCheckOdd = Stream.of("use", "provide", "breadth")
                                         .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(ODD).toArray()));
+        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(CharacterType.ODD).toArray()));
     }
 
     public void testFindFromCollectionWithNullElementsAndEmpty() {
@@ -56,25 +54,25 @@ public class EvenAndOddFinderTest extends TestCase {
 
         Map<CharacterType, Set<String>> fromCollection = finder.findFromCollection(sets);
 
-        Assert.assertEquals(3, fromCollection.get(EVEN).size());
-        Assert.assertEquals(3, fromCollection.get(ODD).size());
+        Assert.assertEquals(3, fromCollection.get(CharacterType.EVEN).size());
+        Assert.assertEquals(3, fromCollection.get(CharacterType.ODD).size());
 
         Set<String> forCheckEven = Stream.of("convenient", "know", "approach")
                                          .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(EVEN).toArray()));
+        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(CharacterType.EVEN).toArray()));
 
         Set<String> forCheckOdd = Stream.of("use", "provide", "breadth")
                                         .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(ODD).toArray()));
+        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(CharacterType.ODD).toArray()));
     }
 
     public void testFindFromCollectionWithNullInputList() {
         Map<CharacterType, Set<String>> fromCollection = finder.findFromCollection(null);
 
-        Assert.assertEquals(0, fromCollection.get(EVEN).size());
-        Assert.assertEquals(0, fromCollection.get(ODD).size());
+        Assert.assertEquals(0, fromCollection.get(CharacterType.EVEN).size());
+        Assert.assertEquals(0, fromCollection.get(CharacterType.ODD).size());
 
     }
 
@@ -86,18 +84,18 @@ public class EvenAndOddFinderTest extends TestCase {
 
         Map<CharacterType, Set<String>> fromCollection = finder.findFromCollection(sets);
 
-        Assert.assertEquals(1, fromCollection.get(EVEN).size());
-        Assert.assertEquals(2, fromCollection.get(ODD).size());
+        Assert.assertEquals(1, fromCollection.get(CharacterType.EVEN).size());
+        Assert.assertEquals(2, fromCollection.get(CharacterType.ODD).size());
 
         Set<String> forCheckEven = Stream.of("convenient")
                                          .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(EVEN).toArray()));
+        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(CharacterType.EVEN).toArray()));
 
         Set<String> forCheckOdd = Stream.of("use", "provide")
                                         .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(ODD).toArray()));
+        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(CharacterType.ODD).toArray()));
     }
 
     public void testFindFromCollectionWithDuplicates() {
@@ -112,17 +110,17 @@ public class EvenAndOddFinderTest extends TestCase {
 
         Map<CharacterType, Set<String>> fromCollection = finder.findFromCollection(sets);
 
-        Assert.assertEquals(4, fromCollection.get(EVEN).size());
-        Assert.assertEquals(2, fromCollection.get(ODD).size());
+        Assert.assertEquals(4, fromCollection.get(CharacterType.EVEN).size());
+        Assert.assertEquals(2, fromCollection.get(CharacterType.ODD).size());
 
         Set<String> forCheckEven = Stream.of("additional", "convenient", "know", "Java")
                                          .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(EVEN).toArray()));
+        Assert.assertThat(forCheckEven, containsInAnyOrder(fromCollection.get(CharacterType.EVEN).toArray()));
 
         Set<String> forCheckOdd = Stream.of("provide", "breadth")
                                         .collect(Collectors.toCollection(HashSet::new));
 
-        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(ODD).toArray()));
+        Assert.assertThat(forCheckOdd, containsInAnyOrder(fromCollection.get(CharacterType.ODD).toArray()));
     }
 }

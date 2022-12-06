@@ -1,4 +1,4 @@
-package ru.neoflex.task2;
+package com.dmrval.task2;
 
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package ru.neoflex.task1;
+package com.dmrval.task1;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;

@@ -1,4 +1,4 @@
-package ru.neoflex.task4;
+package com.dmrval.task4;
 
 public enum CharacterType {
     EVEN,
